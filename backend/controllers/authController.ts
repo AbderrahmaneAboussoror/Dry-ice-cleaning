@@ -14,8 +14,9 @@ export const register = async (req: Request, res: Response): Promise<void> => {
         // Check for validation errors
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
+            const firstError = errors.array()[0];
             res.status(400).json({
-                error: 'Validation failed',
+                message: firstError.msg,  // ← Send specific validation message
                 details: errors.array()
             });
             return;
@@ -72,7 +73,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
 
     } catch (error: any) {
         console.error('Registration error:', error);
-        res.status(500).json({ error: 'Failed to register user' });
+        res.status(500).json({ message: 'Failed to register user' }); // ← Change 'error' to 'message'
     }
 };
 
@@ -81,8 +82,9 @@ export const login = async (req: Request, res: Response): Promise<void> => {
         // Check for validation errors
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
+            const firstError = errors.array()[0];
             res.status(400).json({
-                error: 'Validation failed',
+                message: firstError.msg,  // ← Send specific validation message
                 details: errors.array()
             });
             return;
@@ -93,20 +95,19 @@ export const login = async (req: Request, res: Response): Promise<void> => {
         // Find user
         const user = await User.findOne({ email: email.toLowerCase() });
         if (!user) {
-            res.status(401).json({ error: 'Invalid email or password' });
+            res.status(401).json({ message: 'Invalid email or password' });
             return;
         }
 
-        // Check if user is active
         if (!user.isActive) {
-            res.status(401).json({ error: 'Account is deactivated' });
+            res.status(401).json({ message: 'Account is deactivated' });
             return;
         }
 
         // Verify password
         const isPasswordValid = await comparePassword(password, user.password);
         if (!isPasswordValid) {
-            res.status(401).json({ error: 'Invalid email or password' });
+            res.status(401).json({ message: 'Invalid email or password' });
             return;
         }
 
@@ -133,7 +134,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     } catch (error: any) {
         console.error('Login error:', error);
-        res.status(500).json({ error: 'Failed to login' });
+        res.status(500).json({ message: 'Failed to login' });
     }
 };
 
@@ -162,8 +163,9 @@ export const updateProfile = async (req: AuthRequest, res: Response): Promise<vo
     try {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
+            const firstError = errors.array()[0];
             res.status(400).json({
-                error: 'Validation failed',
+                message: firstError.msg,  // ← Send specific validation message
                 details: errors.array()
             });
             return;
@@ -179,7 +181,7 @@ export const updateProfile = async (req: AuthRequest, res: Response): Promise<vo
         ).select('-password');
 
         if (!updatedUser) {
-            res.status(404).json({ error: 'User not found' });
+            res.status(404).json({ message: 'User not found' }); // ← Change 'error' to 'message'
             return;
         }
 
@@ -190,7 +192,7 @@ export const updateProfile = async (req: AuthRequest, res: Response): Promise<vo
 
     } catch (error) {
         console.error('Update profile error:', error);
-        res.status(500).json({ error: 'Failed to update profile' });
+        res.status(500).json({ message: 'Failed to update profile' }); // ← Change 'error' to 'message'
     }
 };
 
