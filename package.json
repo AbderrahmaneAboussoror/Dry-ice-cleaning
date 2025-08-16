@@ -1,0 +1,9 @@
+{
+  "name": "dry-ice-cleaning",
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:client": "cd client && npm install", 
+    "build:client": "cd client && npm run build",
+    "start": "cd backend && npm start"
+  }
+}
