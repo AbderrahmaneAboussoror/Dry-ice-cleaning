@@ -8,25 +8,20 @@ import {initializeEmailSystem} from "./utils/emailUtils";
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGODB_URI!;
 
-// Initialize email system when starting the app
+// Initialize email system and start server only after MongoDB connects
 const startServer = async () => {
-    await initializeEmailSystem();
+    try {
+        await initializeEmailSystem();
+        await mongoose.connect(MONGO_URI);
+        console.log('✅ MongoDB connected');
 
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
+        app.listen(PORT, () => {
+            console.log(`🚀 Server running on port ${PORT}`);
+        });
+    } catch (err) {
+        console.error('❌ Startup error:', err);
+        process.exit(1);
+    }
 };
 
 startServer();
-
-mongoose
-    .connect(MONGO_URI)
-    .then(() => {
-        console.log('✅ MongoDB connected')
-        app.listen(PORT, () => {
-            console.log(`🚀 Server running on http://localhost:${PORT}`)
-        })
-    })
-    .catch((err) => {
-        console.error('❌ MongoDB connection error:', err)
-    });

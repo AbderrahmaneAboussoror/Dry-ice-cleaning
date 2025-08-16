@@ -32,8 +32,12 @@ const options: Options = {
         }
     },
     apis: [
-        './routes/*.ts',
-        './controllers/*.ts'
+        process.env.NODE_ENV === 'production'
+            ? './dist/routes/*.js'
+            : './routes/*.ts',
+        process.env.NODE_ENV === 'production'
+            ? './dist/controllers/*.js'
+            : './controllers/*.ts'
     ]
 };
 
