@@ -11,6 +11,7 @@ import { adminService, User as UserType, Appointment } from "@/services/adminSer
 
 const AdminDashboard = () => {
     const [users, setUsers] = useState<UserType[]>([]);
+    // @ts-ignore
     const [appointments, setAppointments] = useState<Appointment[]>([]);
     const [stats, setStats] = useState({
         totalUsers: 0,
