@@ -10,7 +10,7 @@ import { Pack, packService } from '../../../services/packService';
 import { authService } from '../../../services/authService';
 
 // Replace with your actual publishable key
-const stripePromise = loadStripe('pk_test_51Rc4m805Vs70dbkUVzqp17cknfGF9FBOYGljexXZXPFAqjEFtxKZhxJXI9zPmeu2n54ohR82MI31lFVaKQT8t2ev004Z10sJaA');
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 'pk_test_51Rc4m805Vs70dbkUVzqp17cknfGF9FBOYGljexXZXPFAqjEFtxKZhxJXI9zPmeu2n54ohR82MI31lFVaKQT8t2ev004Z10sJaA');
 
 interface PaymentModalProps {
     pack: Pack;

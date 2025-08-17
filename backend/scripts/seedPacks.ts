@@ -8,7 +8,7 @@ const packs = [
     {
         name: 'Basic Pack',
         description: 'Perfect for getting started with our services',
-        priceInDKK: 1000,
+        priceInDKK: 3,
         pointsIncluded: 1000,
         bonusPoints: 0,
         freeServices: [],
