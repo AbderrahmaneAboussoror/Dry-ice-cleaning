@@ -1,4 +1,4 @@
-import logo from "../../../../public/croped-logo-free-bg.png";
+import logo from "../../../assets/croped-logo-free-bg.png";
 import { useState } from "react";
 
 const HomeZoning = () => {

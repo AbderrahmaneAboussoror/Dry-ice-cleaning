@@ -1,7 +1,7 @@
 // src/components/ui/navbar.tsx
 import { useState, useRef, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import logo from "../../../public/croped-logo-free-bg.png";
+import logo from "../../assets/croped-logo-free-bg.png";
 import { authService } from "@/services/authService";
 import type { User } from "@/types/auth";
 
