@@ -1,0 +1,316 @@
+{
+  "hero": {
+    "mainTitle": "effektiv og miljøvenlig tøris rengøring",
+    "ctaButton": "book en rengøringsaftale"
+  },
+  "zoning": {
+    "bookNow": "Book Nu",
+    "hero": {
+      "mobileService": "Mobil Service Tilgængelig",
+      "title": "Professionel Tøris Motorrums Rengøring",
+      "description": "Transformer dit motorrum med vores miljøvenlige tøris rengøringsteknologi. Ingen kemikalier, ingen vandskader, bare pristine resultater.",
+      "chemicalFree": "Kemikaliefri",
+      "safeFast": "Sikker & Hurtig"
+    },
+    "whyChoose": {
+      "title": "Hvorfor Tøris Rengøring?",
+      "environmentallySafe": {
+        "title": "Miljømæssigt Sikker",
+        "description": "Ingen skadelige kemikalier eller affaldsrester"
+      },
+      "timeEfficient": {
+        "title": "Tidseffektiv",
+        "description": "Hurtig rengøring uden adskillelse"
+      },
+      "deepClean": {
+        "title": "Dyb Rengøring",
+        "description": "Fjerner fedt, olie og kulstofaflejringer"
+      },
+      "noDamage": {
+        "title": "Ingen Skade",
+        "description": "Sikker for elektriske komponenter"
+      }
+    },
+    "stats": {
+      "title": "Vores Resultater",
+      "enginesCleaned": "Motorer Rengjort",
+      "satisfaction": "Kundetilfredshed",
+      "serviceTime": "Gennemsnitlig Servicetid"
+    },
+    "testimonials": {
+      "title": "Kundeanmeldelse",
+      "mike": "Fantastisk service! Mit motorrum ser helt nyt ud efter tøris rengøringen.",
+      "sarah": "Miljøvenlig og utrolig effektiv. Kan varmt anbefales!",
+      "lars": "Professionelt team, hurtig service og fremragende resultater."
+    },
+    "contact": {
+      "available": "Tilgængelig 24/7"
+    }
+  },
+  "services": {
+    "title": "Vores Tjenester",
+    "subtitle": "Professionelle rengøringsløsninger skræddersyet til dine behov",
+    "learnMore": "Læs Mere",
+    "makeAppointment": "Book Aftale",
+    "contactUs": "Kontakt Os",
+    "comingSoon": "Kommer Snart",
+
+    "automotive": {
+      "title": "Motorrums Rengøring",
+      "subtitle": "Bil Rengøring",
+      "description": "Professionel tøris rengøring af bil motorrum, der fjerner fedt, olie og kulstofaflejringer uden at beskadige følsomme elektriske komponenter. Sikker, effektiv og miljøvenlig.",
+      "imageAlt": "Bil motorrums rengøringsservice",
+      "features": ["Maling stripping", "Undervognsrengøring", "Motorrums rengøring"]
+    },
+
+    "industrial": {
+      "title": "Tunge Maskiner",
+      "subtitle": "Industrielt Udstyr Rengøring",
+      "description": "Kraftig tøris rengøring af industrielle maskiner og udstyr. Fjerner sejt snavs, maling, rust og aflejringer fra produktionsudstyr, svejsefixturer og produktionslinjer.",
+      "imageAlt": "Industrielt udstyr og tunge maskiner rengøring",
+      "features": ["Udstyrsrengøring", "Malingfjernelse", "Rustfjernelse"]
+    },
+
+    "residential": {
+      "title": "Hjemme Tjenester",
+      "subtitle": "Bolig Rengøring",
+      "description": "Specialiserede tøris rengøringstjenester til boligformål, herunder skimmelbekæmpelse, brandskade restaurering og skånsom overfladerengøring. Kommer snart til boligejere.",
+      "imageAlt": "Bolig hjemme rengøringstjenester",
+      "features": ["Skimmelbekæmpelse", "Brandskade restaurering", "Følsomme overflader"]
+    },
+
+    "restoration": {
+      "title": "Restaureringstjenester",
+      "subtitle": "Arv & Kunstværk Rengøring",
+      "description": "Specialiseret rengøring til restaurerings- og arveprojekter, herunder historiske bygninger, kunstværker og følsomme antikke overflader der kræver skånsomme men effektive rengøringsmetoder.",
+      "imageAlt": "Historisk restaurering og kunstværk rengøring",
+      "features": ["Historiske bygninger", "Kunstrestaurering", "Antikke overflader"]
+    }
+  },
+  "booking": {
+    "title": "Book Din Aftale",
+    "subtitle": "Planlæg din tøris rengøringsservice i dag",
+
+    "services": {
+      "basic": "Basis Rengøringsservice",
+      "deluxe": "Deluxe Rengøringsservice"
+    },
+
+    "fields": {
+      "selectService": "Vælg Service",
+      "selectDate": "Vælg Dato",
+      "serviceLocation": "Service Lokation",
+      "additionalNotes": "Yderligere Noter (Valgfrit)"
+    },
+
+    "placeholders": {
+      "chooseService": "Vælg service",
+      "enterAddress": "Indtast din fulde adresse",
+      "specialInstructions": "Eventuelle særlige instruktioner eller ønsker"
+    },
+
+    "pricing": {
+      "price": "Pris",
+      "points": "point",
+      "extraCharges": "50% ekstra i weekenden og 100% ekstra på helligdage"
+    },
+
+    "hints": {
+      "dateRange": "Tilgængelig: i morgen til 3 måneder frem",
+      "locationInfo": "Vores team kommer til denne adresse (5-200 tegn)",
+      "characters": "tegn"
+    },
+
+    "buttons": {
+      "bookAppointment": "Book Aftale",
+      "booking": "Booker..."
+    },
+
+    "info": {
+      "requiredFields": "* Påkrævede felter",
+      "mobileTeam": "Vores mobile team kommer til din angivne lokation"
+    },
+
+    "validation": {
+      "serviceRequired": "Vælg venligst en servicetype",
+      "dateRequired": "Vælg venligst en aftaledato",
+      "futureDate": "Vælg venligst en fremtidig dato",
+      "locationRequired": "Indtast venligst din servicelokation",
+      "locationTooShort": "Lokationsadressen skal være mindst 5 tegn lang",
+      "locationTooLong": "Lokationsadressen skal være mindre end 200 tegn",
+      "notesTooLong": "Noter kan ikke overstige 500 tegn"
+    },
+
+    "auth": {
+      "title": "Log Ind Påkrævet",
+      "message": "Du skal logge ind for at booke en aftale hos os. Opret en konto eller log ind for at fortsætte med din booking.",
+      "signIn": "Log Ind"
+    },
+
+    "success": {
+      "title": "Aftale Booket Med Succes!",
+      "service": "Service",
+      "date": "Dato",
+      "time": "Tid",
+      "location": "Lokation",
+      "pointsRemaining": "Resterende Point"
+    },
+
+    "error": {
+      "title": "Booking Mislykkedes",
+      "tryAgain": "Prøv Igen"
+    },
+
+    "messages": {
+      "bookingError": "Der opstod en uventet fejl under booking af din aftale. Prøv venligst igen."
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Om GlaciX",
+      "subtitle": "Leder fremtiden for miljøvenlig rengøring med innovativ tøris teknologi. Vi transformerer måden, virksomheder griber industriel og bil rengøring an."
+    },
+
+    "stats": {
+      "enginesCleaned": "Motorer Rengjort",
+      "customerSatisfaction": "Kundetilfredshed",
+      "serviceTime": "Gennemsnitlig Servicetid"
+    },
+
+    "story": {
+      "title": "Vores Historie",
+      "paragraph1": "Grundlagt i København, opstod GlaciX fra en simpel vision: revolutionere rengøringsprocesser mens vi beskytter vores miljø. Det der startede som et lille team af ingeniører, passionerede omkring bæredygtig teknologi, er vokset til Danmarks førende tøris rengøringsservice.",
+      "paragraph2": "Vi specialiserer os i bil motorrums rengøring, tung maskine vedligeholdelse og boligtjenester. vores kemikaliefri tilgang leverer ikke kun overlegne resultater, men sikrer også sikkerheden for dit udstyr og miljøet.",
+      "paragraph3": "I dag er vi stolte af at betjene hundredvis af tilfredse kunder på tværs af Danmark, fra individuelle bilentusiaster til store industrielle operationer."
+    },
+
+    "whyDryIce": {
+      "title": "Hvorfor Tøris Rengøring?",
+      "description": "Tøris rengøring bruger faste CO₂ pellets, der sublimerer ved kontakt og efterlader ingen rester. Det er den mest miljøvenlige rengøringsmetode tilgængelig i dag - ingen kemikalier, ingen vandskader, bare pristine resultater."
+    },
+
+    "values": {
+      "title": "Hvad Udmærker Os",
+      "subtitle": "Vores forpligtelse til ekspertise går ud over bare rengøring. Vi leverer værdi gennem innovation, bæredygtighed og uovertruffen kundeservice.",
+      "ecoFriendly": {
+        "title": "Miljøvenlig",
+        "description": "100% kemikaliefri rengøringsproces, der er sikker for miljøet og dit udstyr."
+      },
+      "fastEfficient": {
+        "title": "Hurtig & Effektiv",
+        "description": "Hurtige behandlingstider uden at gå på kompromis med kvaliteten. De fleste tjenester fuldført inden for 2 timer."
+      },
+      "professional": {
+        "title": "Professionel",
+        "description": "Certificerede teknikere med års erfaring inden for tøris rengøringsteknologi."
+      }
+    },
+
+    "team": {
+      "title": "Mød Vores Ekspertteam",
+      "description": "Vores certificerede teknikere bringer års erfaring og passion for innovation. Hvert teammedlem er trænet i de nyeste tøris rengøringsteknikker og sikkerhedsprotokoller.",
+      "paul": {
+        "name": "Paul",
+        "role": "Direktør",
+        "experience": "5+ Års Erfaring"
+      }
+    },
+
+    "contact": {
+      "directContact": "Kontakt vores team direkte:"
+    }
+  },
+  "pricing": {
+    "sectionTitle": "fleksible priser for alle behov",
+    "sectionSubtitle": "køb point",
+    "currency": "DKK",
+    "defaultPackName": "Pakke",
+    "noDescription": "Ingen beskrivelse tilgængelig",
+    "forPoints": "for {{points}} point",
+    "save": "Spar {{amount}}",
+    "purchasePack": "Køb Pakke",
+    "loginToPurchase": "Log Ind for at Købe",
+
+    "services": {
+      "basic": "Basis Rengøring",
+      "deluxe": "Deluxe Rengøring"
+    },
+
+    "features": {
+      "pointsIncluded": "{{points}} point inkluderet",
+      "bonusPoints": "{{points}} bonus point",
+      "freeService": "Gratis {{service}}",
+      "noExpiry": "Ingen Udløb",
+      "instantAccess": "Øjeblikkelig Adgang",
+      "prioritySupport": "Prioriteret Support"
+    },
+
+    "loading": "Indlæser pakker...",
+    "error": "Fejl",
+    "retry": "Prøv Igen",
+    "noPacksAvailable": "Ingen pakker tilgængelige i øjeblikket.",
+
+    "errors": {
+      "invalidData": "Ugyldige pakkedata modtaget",
+      "failedToLoad": "Kunne ikke indlæse pakker"
+    },
+
+    "auth": {
+      "title": "Log Ind Påkrævet",
+      "message": "Du skal logge ind for at købe point. Opret en konto eller log ind for at købe point-pakker og begynde at booke tjenester.",
+      "signIn": "Log Ind"
+    },
+
+    "success": {
+      "title": "Køb Gennemført Med Succes!",
+      "message": "🎉 Du modtog {{points}} point! Dine point er blevet tilføjet til din konto og du kan nu booke tjenester."
+    }
+  },
+
+  "payment": {
+    "completePurchase": "Gennemfør Køb",
+    "initializing": "Initialiserer betaling...",
+    "cardDetails": "Kortoplysninger",
+    "processing": "Behandler...",
+    "payAmount": "Betal {{amount}} {{currency}}",
+    "points": "point",
+
+    "errors": {
+      "initializationFailed": "Kunne ikke initialisere betaling",
+      "cardElementNotFound": "Kortelement ikke fundet",
+      "paymentFailed": "Betaling mislykkedes",
+      "confirmationFailed": "Betalingsbekræftelse mislykkedes"
+    }
+  },
+  "contact": {
+    "title": "Kom I Kontakt",
+    "subtitle": "Kontakt os for eventuelle forespørgsler eller for at planlægge en service.",
+
+    "form": {
+      "firstName": "fornavn",
+      "lastName": "efternavn",
+      "email": "e-mail",
+      "message": "besked",
+      "submit": "indsend",
+      "sending": "sender..."
+    },
+
+    "validation": {
+      "firstNameRequired": "Fornavn er påkrævet",
+      "firstNameTooShort": "Fornavn skal være mindst 2 tegn",
+      "lastNameRequired": "Efternavn er påkrævet",
+      "lastNameTooShort": "Efternavn skal være mindst 2 tegn",
+      "emailRequired": "E-mail er påkrævet",
+      "emailInvalid": "Indtast venligst en gyldig e-mailadresse",
+      "messageRequired": "Besked er påkrævet",
+      "messageTooShort": "Besked skal være mindst 10 tegn",
+      "messageTooLong": "Besked må ikke overstige 1000 tegn"
+    },
+
+    "messages": {
+      "successDefault": "Tak for din besked! Vi vender tilbage til dig snart.",
+      "sendFailed": "Kunne ikke sende besked. Prøv venligst igen.",
+      "sendFailedRetry": "Kunne ikke sende besked. Prøv venligst igen senere."
+    }
+  }
+}

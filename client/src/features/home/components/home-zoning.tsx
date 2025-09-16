@@ -1,34 +1,39 @@
 import logo from "../../../assets/croped-logo-free-bg.png";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const HomeZoning = () => {
+    const { t } = useTranslation('home');
+    // @ts-ignore
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
+    // Note: Testimonials could also be moved to translation files
+    // but keeping them here for now since they contain real customer data
     const testimonials = [
         {
             name: "Mike Johnson",
             location: "Copenhagen",
-            text: "Amazing service! My engine bay looks brand new after the dry ice cleaning.",
+            text: t('zoning.testimonials.mike'),
             rating: 5
         },
         {
             name: "Sarah Chen",
             location: "Aarhus",
-            text: "Eco-friendly and incredibly effective. Highly recommend!",
+            text: t('zoning.testimonials.sarah'),
             rating: 5
         },
         {
             name: "Lars Nielsen",
             location: "Odense",
-            text: "Professional team, quick service, and excellent results.",
+            text: t('zoning.testimonials.lars'),
             rating: 5
         }
     ];
-
+    // @ts-ignore
     const nextTestimonial = () => {
         setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     };
-
+    // @ts-ignore
     const prevTestimonial = () => {
         setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     };
@@ -51,7 +56,7 @@ const HomeZoning = () => {
                     onClick={handleBookNow}
                     className="bg-cyan hover:bg-sky-300 text-gray-800 px-8 py-2 rounded-xl transition-colors"
                 >
-                    Book Now
+                    {t('zoning.bookNow')}
                 </button>
             </div>
 
@@ -63,16 +68,15 @@ const HomeZoning = () => {
                         <div className="space-y-4">
                             <div className="flex items-center space-x-2">
                                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                                <span className="text-sm font-medium text-green-700">Mobile Service Available</span>
+                                <span className="text-sm font-medium text-green-700">{t('zoning.hero.mobileService')}</span>
                             </div>
 
                             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">
-                                Professional Dry Ice Engine Bay Cleaning
+                                {t('zoning.hero.title')}
                             </h2>
 
                             <p className="text-gray-600 text-sm md:text-base">
-                                Transform your engine bay with our eco-friendly dry ice cleaning technology.
-                                No chemicals, no water damage, just pristine results.
+                                {t('zoning.hero.description')}
                             </p>
 
                             <div className="flex items-center space-x-6 pt-2">
@@ -80,13 +84,13 @@ const HomeZoning = () => {
                                     <svg className="w-5 h-5 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                     </svg>
-                                    <span className="text-sm text-gray-700">Chemical-free</span>
+                                    <span className="text-sm text-gray-700">{t('zoning.hero.chemicalFree')}</span>
                                 </div>
                                 <div className="flex items-center space-x-2">
                                     <svg className="w-5 h-5 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                     </svg>
-                                    <span className="text-sm text-gray-700">Safe & Fast</span>
+                                    <span className="text-sm text-gray-700">{t('zoning.hero.safeFast')}</span>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +98,7 @@ const HomeZoning = () => {
 
                     {/* Why Choose Us / Benefits */}
                     <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl h-64 w-full p-6">
-                        <h3 className="text-xl font-bold text-gray-800 mb-4">Why Dry Ice Cleaning?</h3>
+                        <h3 className="text-xl font-bold text-gray-800 mb-4">{t('zoning.whyChoose.title')}</h3>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
                             <div className="space-y-3">
@@ -105,8 +109,8 @@ const HomeZoning = () => {
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold text-gray-800 text-sm">Environmentally Safe</h4>
-                                        <p className="text-xs text-gray-600">No harmful chemicals or waste residue</p>
+                                        <h4 className="font-semibold text-gray-800 text-sm">{t('zoning.whyChoose.environmentallySafe.title')}</h4>
+                                        <p className="text-xs text-gray-600">{t('zoning.whyChoose.environmentallySafe.description')}</p>
                                     </div>
                                 </div>
 
@@ -117,8 +121,8 @@ const HomeZoning = () => {
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold text-gray-800 text-sm">Time Efficient</h4>
-                                        <p className="text-xs text-gray-600">Quick cleaning without disassembly</p>
+                                        <h4 className="font-semibold text-gray-800 text-sm">{t('zoning.whyChoose.timeEfficient.title')}</h4>
+                                        <p className="text-xs text-gray-600">{t('zoning.whyChoose.timeEfficient.description')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -131,8 +135,8 @@ const HomeZoning = () => {
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold text-gray-800 text-sm">Deep Clean</h4>
-                                        <p className="text-xs text-gray-600">Removes grease, oil, and carbon deposits</p>
+                                        <h4 className="font-semibold text-gray-800 text-sm">{t('zoning.whyChoose.deepClean.title')}</h4>
+                                        <p className="text-xs text-gray-600">{t('zoning.whyChoose.deepClean.description')}</p>
                                     </div>
                                 </div>
 
@@ -143,8 +147,8 @@ const HomeZoning = () => {
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold text-gray-800 text-sm">No Damage</h4>
-                                        <p className="text-xs text-gray-600">Safe for electrical components</p>
+                                        <h4 className="font-semibold text-gray-800 text-sm">{t('zoning.whyChoose.noDamage.title')}</h4>
+                                        <p className="text-xs text-gray-600">{t('zoning.whyChoose.noDamage.description')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -158,67 +162,69 @@ const HomeZoning = () => {
 
                         {/* Quick Stats */}
                         <div className="mb-6">
-                            <h3 className="font-bold text-gray-800 text-sm mb-3">Our Track Record</h3>
+                            <h3 className="font-bold text-gray-800 text-sm mb-3">{t('zoning.stats.title')}</h3>
                             <div className="space-y-3">
                                 <div className="text-center">
                                     <div className="text-2xl font-bold text-cyan-600">500+</div>
-                                    <div className="text-xs text-gray-600">Engines Cleaned</div>
+                                    <div className="text-xs text-gray-600">{t('zoning.stats.enginesCleaned')}</div>
                                 </div>
                                 <div className="text-center">
                                     <div className="text-2xl font-bold text-cyan-600">98%</div>
-                                    <div className="text-xs text-gray-600">Customer Satisfaction</div>
+                                    <div className="text-xs text-gray-600">{t('zoning.stats.satisfaction')}</div>
                                 </div>
                                 <div className="text-center">
                                     <div className="text-2xl font-bold text-cyan-600">2hr</div>
-                                    <div className="text-xs text-gray-600">Average Service Time</div>
+                                    <div className="text-xs text-gray-600">{t('zoning.stats.serviceTime')}</div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Customer Testimonial */}
-                        <div className="bg-white rounded-lg p-4 shadow-sm flex-1">
-                            <div className="flex justify-between items-center mb-2">
-                                <h4 className="font-semibold text-gray-800 text-sm">Customer Review</h4>
-                                <div className="flex space-x-1">
-                                    <button
-                                        onClick={prevTestimonial}
-                                        className="w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-xs transition-colors"
-                                    >
-                                        ←
-                                    </button>
-                                    <button
-                                        onClick={nextTestimonial}
-                                        className="w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-xs transition-colors"
-                                    >
-                                        →
-                                    </button>
-                                </div>
-                            </div>
+                        {/*<div className="bg-white rounded-lg p-4 shadow-sm flex-1">*/}
+                        {/*    <div className="flex justify-between items-center mb-2">*/}
+                        {/*        <h4 className="font-semibold text-gray-800 text-sm">{t('zoning.testimonials.title')}</h4>*/}
+                        {/*        <div className="flex space-x-1">*/}
+                        {/*            <button*/}
+                        {/*                onClick={prevTestimonial}*/}
+                        {/*                className="w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-xs transition-colors"*/}
+                        {/*                aria-label={t('common:previous')}*/}
+                        {/*            >*/}
+                        {/*                ←*/}
+                        {/*            </button>*/}
+                        {/*            <button*/}
+                        {/*                onClick={nextTestimonial}*/}
+                        {/*                className="w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-xs transition-colors"*/}
+                        {/*                aria-label={t('common:next')}*/}
+                        {/*            >*/}
+                        {/*                →*/}
+                        {/*            </button>*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
 
-                            <div className="space-y-3">
-                                <div className="flex text-yellow-400 text-sm">
-                                    {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                                        <span key={i}>★</span>
-                                    ))}
-                                </div>
+                        {/*    <div className="space-y-3">*/}
+                        {/*        <div className="flex text-yellow-400 text-sm">*/}
+                        {/*            {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (*/}
+                        {/*                <span key={i}>★</span>*/}
+                        {/*            ))}*/}
+                        {/*        </div>*/}
 
-                                <p className="text-gray-700 text-sm italic">
-                                    "{testimonials[currentTestimonial].text}"
-                                </p>
+                        {/*        <p className="text-gray-700 text-sm italic">*/}
+                        {/*            "{testimonials[currentTestimonial].text}"*/}
+                        {/*        </p>*/}
 
-                                <div className="text-xs text-gray-600">
-                                    <div className="font-semibold">{testimonials[currentTestimonial].name}</div>
-                                    <div>{testimonials[currentTestimonial].location}</div>
-                                </div>
-                            </div>
-                        </div>
+                        {/*        <div className="text-xs text-gray-600">*/}
+                        {/*            <div className="font-semibold">{testimonials[currentTestimonial].name}</div>*/}
+                        {/*            <div>{testimonials[currentTestimonial].location}</div>*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
 
                         {/* Contact Info */}
                         <div className="mt-4 text-center">
                             <div className="text-xs text-gray-600 space-y-1">
                                 <div>📞 +45 91 11 96 54</div>
-                                <div>📧 info@glacix.dk</div>
-                                <div className="text-green-600 font-medium">Available 24/7</div>
+                                <div>📧 support@glacix.net</div>
+                                <div className="text-green-600 font-medium">{t('zoning.contact.available')}</div>
                             </div>
                         </div>
                     </div>

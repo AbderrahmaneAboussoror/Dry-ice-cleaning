@@ -1,0 +1,147 @@
+{
+  "layout": {
+    "title": "My Profile",
+    "subtitle": "Manage your account information and view your service history"
+  },
+  "personal": {
+    "title": "Personal Information",
+    "buttons": {
+      "edit": "Edit",
+      "cancel": "Cancel",
+      "retry": "Retry",
+      "saving": "Saving...",
+      "saveChanges": "Save Changes"
+    },
+    "fields": {
+      "firstName": "first name",
+      "lastName": "last name",
+      "email": "email address",
+      "phone": "phone",
+      "address": "address"
+    },
+    "placeholders": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "+45 12 34 56 78",
+      "address": "123 Main Street, City, Postal Code"
+    },
+    "errors": {
+      "sessionExpired": "Session expired. Please log in again.",
+      "profileNotFound": "User profile not found.",
+      "connectionError": "Unable to connect to server. Please check your internet connection.",
+      "generalError": "Error: {{message}}",
+      "loadFailed": "Failed to load profile data. Please refresh the page."
+    },
+    "messages": {
+      "updateSuccess": "Profile updated successfully!",
+      "updateFailed": "Failed to update profile. Please try again."
+    }
+  },
+
+  "appointments": {
+    "title": "Current Appointments",
+    "dateLocale": "en-US",
+    "buttons": {
+      "refresh": "Refresh",
+      "retry": "Retry"
+    },
+    "serviceTypes": {
+      "basic": "Basic Cleaning Service",
+      "deluxe": "Deluxe Cleaning Service"
+    },
+    "statuses": {
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "in_progress": "In Progress",
+      "cancelled": "Cancelled"
+    },
+    "table": {
+      "date": "Date",
+      "time": "Time",
+      "service": "Service",
+      "location": "Location",
+      "points": "Points",
+      "status": "Status",
+      "price": "Price"
+    },
+    "mobile": {
+      "date": "Date",
+      "time": "Time",
+      "price": "Price",
+      "notes": "Notes"
+    },
+    "empty": {
+      "title": "No upcoming appointments",
+      "subtitle": "Your future appointments will appear here"
+    },
+    "errors": {
+      "loadFailed": "Failed to load appointments"
+    }
+  },
+
+  "jobHistory": {
+    "title": "Job History",
+    "dateLocale": "en-US",
+    "buttons": {
+      "refresh": "Refresh",
+      "retry": "Retry"
+    },
+    "serviceTypes": {
+      "basic": "Basic Cleaning Service",
+      "deluxe": "Deluxe Cleaning Service"
+    },
+    "empty": {
+      "title": "No completed jobs yet",
+      "subtitle": "Your completed appointments will appear here"
+    },
+    "stats": {
+      "totalJobs": "Total Jobs",
+      "pointsConsumed": "Points Consumed",
+      "premiumJobs": "Premium Jobs"
+    },
+    "errors": {
+      "loadFailed": "Failed to load job history"
+    }
+  },
+
+  "purchasedPacks": {
+    "title": "Purchased Packs",
+    "currentBalance": "Current Balance",
+    "points": "points",
+    "buttons": {
+      "refresh": "Refresh",
+      "retry": "Retry",
+      "buyMore": "Buy More Points"
+    },
+    "table": {
+      "purchaseDate": "Purchase Date",
+      "package": "Package",
+      "points": "Points",
+      "pointsAndBenefits": "Points & Benefits",
+      "amountPaid": "Amount Paid",
+      "status": "Status"
+    },
+    "mobile": {
+      "points": "Points",
+      "amountPaid": "Amount Paid",
+      "includedServices": "Included Services"
+    },
+    "empty": {
+      "title": "No purchases yet",
+      "subtitle": "Your purchased packs will appear here"
+    },
+    "stats": {
+      "totalPurchases": "Total Purchases",
+      "pointsEarned": "Points Earned",
+      "totalSpent": "Total Spent",
+      "successful": "Successful"
+    },
+    "status": {
+      "completed": "Completed"
+    },
+    "errors": {
+      "loadFailed": "Failed to load purchase history"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "home": "Home",
+  "services": "Services",
+  "booking": "Booking",
+  "about": "About",
+  "contact": "Contact",
+  "login": "Login",
+  "register": "Register",
+  "profile": "Profile",
+  "admin": "Admin",
+  "logout": "Logout",
+  "dashboard": "Dashboard"
+}

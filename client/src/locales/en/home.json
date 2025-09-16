@@ -1,0 +1,316 @@
+{
+  "hero": {
+    "mainTitle": "efficient and eco-friendly dry ice cleaning",
+    "ctaButton": "book a cleaning appointment"
+  },
+  "zoning": {
+    "bookNow": "Book Now",
+    "hero": {
+      "mobileService": "Mobile Service Available",
+      "title": "Professional Dry Ice Engine Bay Cleaning",
+      "description": "Transform your engine bay with our eco-friendly dry ice cleaning technology. No chemicals, no water damage, just pristine results.",
+      "chemicalFree": "Chemical-free",
+      "safeFast": "Safe & Fast"
+    },
+    "whyChoose": {
+      "title": "Why Dry Ice Cleaning?",
+      "environmentallySafe": {
+        "title": "Environmentally Safe",
+        "description": "No harmful chemicals or waste residue"
+      },
+      "timeEfficient": {
+        "title": "Time Efficient",
+        "description": "Quick cleaning without disassembly"
+      },
+      "deepClean": {
+        "title": "Deep Clean",
+        "description": "Removes grease, oil, and carbon deposits"
+      },
+      "noDamage": {
+        "title": "No Damage",
+        "description": "Safe for electrical components"
+      }
+    },
+    "stats": {
+      "title": "Our Track Record",
+      "enginesCleaned": "Engines Cleaned",
+      "satisfaction": "Customer Satisfaction",
+      "serviceTime": "Average Service Time"
+    },
+    "testimonials": {
+      "title": "Customer Review",
+      "mike": "Amazing service! My engine bay looks brand new after the dry ice cleaning.",
+      "sarah": "Eco-friendly and incredibly effective. Highly recommend!",
+      "lars": "Professional team, quick service, and excellent results."
+    },
+    "contact": {
+      "available": "Available 24/7"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Professional cleaning solutions tailored to your needs",
+    "learnMore": "Learn More",
+    "makeAppointment": "Make Appointment",
+    "contactUs": "Contact Us",
+    "comingSoon": "Coming Soon",
+
+    "automotive": {
+      "title": "Engine Bay Cleaning",
+      "subtitle": "Automotive Cleaning",
+      "description": "Professional dry ice cleaning for automotive engine bays, removing grease, oil, and carbon buildup without damaging sensitive electrical components. Safe, effective, and environmentally friendly.",
+      "imageAlt": "Automotive engine bay cleaning service",
+      "features": ["Paint stripping", "Undercarriage cleaning", "Engine bay cleaning"]
+    },
+
+    "industrial": {
+      "title": "Heavy Machinery",
+      "subtitle": "Industrial Equipment Cleaning",
+      "description": "Heavy-duty dry ice cleaning for industrial machinery and equipment. Removes tough contaminants, paint, rust, and buildup from manufacturing equipment, welding fixtures, and production lines.",
+      "imageAlt": "Industrial equipment and heavy machinery cleaning",
+      "features": ["Equipment cleaning", "Paint removal", "Rust removal"]
+    },
+
+    "residential": {
+      "title": "Home Services",
+      "subtitle": "Residential Cleaning",
+      "description": "Specialized dry ice cleaning services for residential applications including mold remediation, fire damage restoration, and delicate surface cleaning. Coming soon to serve homeowners.",
+      "imageAlt": "Residential home cleaning services",
+      "features": ["Mold remediation", "Fire damage restoration", "Delicate surfaces"]
+    },
+
+    "restoration": {
+      "title": "Restoration Services",
+      "subtitle": "Heritage & Artwork Cleaning",
+      "description": "Specialized cleaning for restoration and heritage projects including historical buildings, artwork, and delicate antique surfaces requiring gentle yet effective cleaning methods.",
+      "imageAlt": "Historical restoration and artwork cleaning",
+      "features": ["Historical buildings", "Artwork restoration", "Antique surfaces"]
+    }
+  },
+  "booking": {
+    "title": "Book Your Appointment",
+    "subtitle": "Schedule your dry ice cleaning service today",
+
+    "services": {
+      "basic": "Basic Cleaning Service",
+      "deluxe": "Deluxe Cleaning Service"
+    },
+
+    "fields": {
+      "selectService": "Select Service",
+      "selectDate": "Select Date",
+      "serviceLocation": "Service Location",
+      "additionalNotes": "Additional Notes (Optional)"
+    },
+
+    "placeholders": {
+      "chooseService": "Choose service",
+      "enterAddress": "Enter your full address",
+      "specialInstructions": "Any special instructions or requests"
+    },
+
+    "pricing": {
+      "price": "Price",
+      "points": "points",
+      "extraCharges": "50% extra on the weekend and 100% extra on holiday"
+    },
+
+    "hints": {
+      "dateRange": "Available: tomorrow to 3 months ahead",
+      "locationInfo": "Our team will come to this address (5-200 characters)",
+      "characters": "characters"
+    },
+
+    "buttons": {
+      "bookAppointment": "Book Appointment",
+      "booking": "Booking..."
+    },
+
+    "info": {
+      "requiredFields": "* Required fields",
+      "mobileTeam": "Our mobile team will come to your specified location"
+    },
+
+    "validation": {
+      "serviceRequired": "Please select a service type",
+      "dateRequired": "Please select an appointment date",
+      "futureDate": "Please select a future date",
+      "locationRequired": "Please enter your service location",
+      "locationTooShort": "Location address must be at least 5 characters long",
+      "locationTooLong": "Location address must be less than 200 characters",
+      "notesTooLong": "Notes cannot exceed 500 characters"
+    },
+
+    "auth": {
+      "title": "Sign In Required",
+      "message": "You need to sign in to book an appointment with us. Create an account or sign in to continue with your booking.",
+      "signIn": "Sign In"
+    },
+
+    "success": {
+      "title": "Appointment Booked Successfully!",
+      "service": "Service",
+      "date": "Date",
+      "time": "Time",
+      "location": "Location",
+      "pointsRemaining": "Points Remaining"
+    },
+
+    "error": {
+      "title": "Booking Failed",
+      "tryAgain": "Try Again"
+    },
+
+    "messages": {
+      "bookingError": "An unexpected error occurred while booking your appointment. Please try again."
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About GlaciX",
+      "subtitle": "Leading the future of eco-friendly cleaning with innovative dry ice technology. We transform the way businesses approach industrial and automotive cleaning."
+    },
+
+    "stats": {
+      "enginesCleaned": "Engines Cleaned",
+      "customerSatisfaction": "Customer Satisfaction",
+      "serviceTime": "Average Service Time"
+    },
+
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "Founded in Copenhagen, GlaciX emerged from a simple vision: revolutionize cleaning processes while protecting our environment. What started as a small team of engineers passionate about sustainable technology has grown into Denmark's leading dry ice cleaning service.",
+      "paragraph2": "We specialize in automotive engine bay cleaning, heavy machinery maintenance, and residential services. Our chemical-free approach not only delivers superior results but also ensures the safety of your equipment and the environment.",
+      "paragraph3": "Today, we're proud to serve hundreds of satisfied customers across Denmark, from individual car enthusiasts to large industrial operations."
+    },
+
+    "whyDryIce": {
+      "title": "Why Dry Ice Cleaning?",
+      "description": "Dry ice cleaning uses solid CO₂ pellets that sublimate on contact, leaving no residue. It's the most environmentally friendly cleaning method available today - no chemicals, no water damage, just pristine results."
+    },
+
+    "values": {
+      "title": "What Sets Us Apart",
+      "subtitle": "Our commitment to excellence goes beyond just cleaning. We deliver value through innovation, sustainability, and unmatched customer service.",
+      "ecoFriendly": {
+        "title": "Eco-Friendly",
+        "description": "100% chemical-free cleaning process that's safe for the environment and your equipment."
+      },
+      "fastEfficient": {
+        "title": "Fast & Efficient",
+        "description": "Quick turnaround times without compromising on quality. Most services completed within 2 hours."
+      },
+      "professional": {
+        "title": "Professional",
+        "description": "Certified technicians with years of experience in dry ice cleaning technology."
+      }
+    },
+
+    "team": {
+      "title": "Meet Our Expert Team",
+      "description": "Our certified technicians bring years of experience and passion for innovation. Every team member is trained in the latest dry ice cleaning techniques and safety protocols.",
+      "paul": {
+        "name": "Paul",
+        "role": "CEO",
+        "experience": "5+ Years Experience"
+      }
+    },
+
+    "contact": {
+      "directContact": "Contact our team directly:"
+    }
+  },
+  "pricing": {
+    "sectionTitle": "flexible pricing for all needs",
+    "sectionSubtitle": "purchase points",
+    "currency": "DKK",
+    "defaultPackName": "Pack",
+    "noDescription": "No description available",
+    "forPoints": "for {{points}} points",
+    "save": "Save {{amount}}",
+    "purchasePack": "Purchase Pack",
+    "loginToPurchase": "Login to Purchase",
+
+    "services": {
+      "basic": "Basic Cleaning",
+      "deluxe": "Deluxe Cleaning"
+    },
+
+    "features": {
+      "pointsIncluded": "{{points}} points included",
+      "bonusPoints": "{{points}} bonus points",
+      "freeService": "Free {{service}}",
+      "noExpiry": "No Expiry",
+      "instantAccess": "Instant Access",
+      "prioritySupport": "Priority Support"
+    },
+
+    "loading": "Loading packs...",
+    "error": "Error",
+    "retry": "Retry",
+    "noPacksAvailable": "No packs available at the moment.",
+
+    "errors": {
+      "invalidData": "Invalid packs data received",
+      "failedToLoad": "Failed to load packs"
+    },
+
+    "auth": {
+      "title": "Sign In Required",
+      "message": "You need to sign in to purchase points. Create an account or sign in to buy point packages and start booking services.",
+      "signIn": "Sign In"
+    },
+
+    "success": {
+      "title": "Purchase Successful!",
+      "message": "🎉 You received {{points}} points! Your points have been added to your account and you can now book services."
+    }
+  },
+
+  "payment": {
+    "completePurchase": "Complete Purchase",
+    "initializing": "Initializing payment...",
+    "cardDetails": "Card details",
+    "processing": "Processing...",
+    "payAmount": "Pay {{amount}} {{currency}}",
+    "points": "points",
+
+    "errors": {
+      "initializationFailed": "Failed to initialize payment",
+      "cardElementNotFound": "Card element not found",
+      "paymentFailed": "Payment failed",
+      "confirmationFailed": "Payment confirmation failed"
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Reach out to us for any inquiries or to schedule a service.",
+
+    "form": {
+      "firstName": "first name",
+      "lastName": "last name",
+      "email": "email",
+      "message": "message",
+      "submit": "submit",
+      "sending": "sending..."
+    },
+
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "firstNameTooShort": "First name must be at least 2 characters",
+      "lastNameRequired": "Last name is required",
+      "lastNameTooShort": "Last name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "messageRequired": "Message is required",
+      "messageTooShort": "Message must be at least 10 characters",
+      "messageTooLong": "Message must not exceed 1000 characters"
+    },
+
+    "messages": {
+      "successDefault": "Thank you for your message! We will get back to you soon.",
+      "sendFailed": "Failed to send message. Please try again.",
+      "sendFailedRetry": "Failed to send message. Please try again later."
+    }
+  }
+}

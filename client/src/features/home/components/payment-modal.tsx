@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
+import { useTranslation } from 'react-i18next';
 import {
     Elements,
     CardElement,
@@ -26,6 +27,7 @@ interface CheckoutFormProps {
 }
 
 const CheckoutForm: React.FC<CheckoutFormProps> = ({ pack, onSuccess, onClose }) => {
+    const { t } = useTranslation('home');
     const stripe = useStripe();
     const elements = useElements();
     const [isLoading, setIsLoading] = useState(false);
@@ -41,14 +43,14 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ pack, onSuccess, onClose })
                 setClientSecret(response.clientSecret);
                 setPaymentIntentId(response.paymentIntentId);
             } catch (err) {
-                setError(err instanceof Error ? err.message : 'Failed to initialize payment');
+                setError(err instanceof Error ? err.message : t('payment.errors.initializationFailed'));
             } finally {
                 setIsLoading(false);
             }
         };
 
         initializePayment();
-    }, [pack.id]);
+    }, [pack.id, t]);
 
     const handleSubmit = async () => {
         if (!stripe || !elements || !clientSecret) {
@@ -60,7 +62,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ pack, onSuccess, onClose })
 
         const cardElement = elements.getElement(CardElement);
         if (!cardElement) {
-            setError('Card element not found');
+            setError(t('payment.errors.cardElementNotFound'));
             setIsLoading(false);
             return;
         }
@@ -77,7 +79,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ pack, onSuccess, onClose })
             });
 
             if (stripeError) {
-                setError(stripeError.message || 'Payment failed');
+                setError(stripeError.message || t('payment.errors.paymentFailed'));
                 setIsLoading(false);
                 return;
             }
@@ -97,7 +99,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ pack, onSuccess, onClose })
                 }
             }
         } catch (err) {
-            setError(err instanceof Error ? err.message : 'Payment confirmation failed');
+            setError(err instanceof Error ? err.message : t('payment.errors.confirmationFailed'));
         } finally {
             setIsLoading(false);
         }
@@ -107,7 +109,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ pack, onSuccess, onClose })
         return (
             <div className="flex items-center justify-center p-8">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                <span className="ml-2">Initializing payment...</span>
+                <span className="ml-2">{t('payment.initializing')}</span>
             </div>
         );
     }
@@ -118,14 +120,18 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ pack, onSuccess, onClose })
                 <h3 className="font-semibold text-gray-900">{pack.name}</h3>
                 <p className="text-sm text-gray-600">{pack.description}</p>
                 <div className="mt-2 flex justify-between items-center">
-                    <span className="text-lg font-bold">{pack.priceInDKK} DKK</span>
-                    <span className="text-sm text-gray-600">{pack.totalPoints} points</span>
+                    <span className="text-lg font-bold">
+                        {pack.priceInDKK} {t('pricing.currency')}
+                    </span>
+                    <span className="text-sm text-gray-600">
+                        {pack.totalPoints} {t('payment.points')}
+                    </span>
                 </div>
             </div>
 
             <div className="space-y-4">
                 <label className="block text-sm font-medium text-gray-700">
-                    Card details
+                    {t('payment.cardDetails')}
                 </label>
                 <div className="p-3 border border-gray-300 rounded-md">
                     <CardElement
@@ -156,14 +162,14 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ pack, onSuccess, onClose })
                     className="flex-1 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
                     disabled={isLoading}
                 >
-                    Cancel
+                    {t('common:cancel')}
                 </button>
                 <button
                     onClick={handleSubmit}
                     disabled={!stripe || isLoading}
                     className="flex-1 px-4 py-2 bg-[#26687D] border border-transparent rounded-md text-sm font-medium text-white hover:bg-[#1e5a6b] disabled:opacity-50"
                 >
-                    {isLoading ? 'Processing...' : `Pay ${pack.priceInDKK} DKK`}
+                    {isLoading ? t('payment.processing') : t('payment.payAmount', { amount: pack.priceInDKK, currency: t('pricing.currency') })}
                 </button>
             </div>
         </div>
@@ -171,13 +177,15 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ pack, onSuccess, onClose })
 };
 
 const PaymentModal: React.FC<PaymentModalProps> = ({ pack, isOpen, onClose, onSuccess }) => {
+    const { t } = useTranslation('home');
+
     if (!isOpen) return null;
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white rounded-lg p-6 w-full max-w-md mx-4">
                 <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-xl font-semibold text-gray-900">Complete Purchase</h2>
+                    <h2 className="text-xl font-semibold text-gray-900">{t('payment.completePurchase')}</h2>
                     <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
                         ✕
                     </button>

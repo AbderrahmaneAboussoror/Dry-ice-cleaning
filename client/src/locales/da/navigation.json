@@ -1,0 +1,13 @@
+{
+  "home": "Hjem",
+  "services": "Tjenester",
+  "booking": "Booking",
+  "about": "Om os",
+  "contact": "Kontakt",
+  "login": "Log ind",
+  "register": "Tilmeld",
+  "profile": "Profil",
+  "admin": "Admin",
+  "logout": "Log ud",
+  "dashboard": "Dashboard"
+}

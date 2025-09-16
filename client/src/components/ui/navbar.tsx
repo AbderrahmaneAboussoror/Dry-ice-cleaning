@@ -1,19 +1,23 @@
 // src/components/ui/navbar.tsx
 import { useState, useRef, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import logo from "../../assets/croped-logo-free-bg.png";
 import { authService } from "@/services/authService";
 import type { User } from "@/types/auth";
+import LanguageSwitcher from "./language-switcher";
 
 interface Navigation {
     name: string;
+    translationKey: string; // Add translation key
     href?: string;
     action?: () => void;
     type: 'link' | 'scroll';
-    sectionId?: string; // Add this to track which section this nav item represents
+    sectionId?: string;
 }
 
 const Navbar = () => {
+    const { t } = useTranslation(); // Add useTranslation hook
     const [isOpen, setIsOpen] = useState(false);
     const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState<string>('home');
@@ -119,34 +123,39 @@ const Navbar = () => {
         setIsOpen(false);
     };
 
-    // Base navigation items (always shown)
+    // Base navigation items (always shown) - Updated with translation keys
     const baseNavigation: Navigation[] = [
         {
-            name: "home",
+            name: "home", // Keep original for backwards compatibility
+            translationKey: "navigation:home",
             type: 'scroll',
             action: scrollToHome,
             sectionId: 'home',
         },
         {
             name: "services",
+            translationKey: "navigation:services",
             type: 'scroll',
             action: () => scrollToSection('services'),
             sectionId: 'services',
         },
         {
             name: "booking",
+            translationKey: "navigation:booking",
             type: 'scroll',
             action: () => scrollToSection('appointment'),
             sectionId: 'appointment',
         },
         {
             name: "about us",
+            translationKey: "navigation:about",
             type: 'scroll',
             action: () => scrollToSection('about-us'),
             sectionId: 'about-us',
         },
         {
             name: "contact",
+            translationKey: "navigation:contact",
             type: 'scroll',
             action: () => scrollToSection('contact'),
             sectionId: 'contact',
@@ -158,6 +167,7 @@ const Navbar = () => {
         ...baseNavigation,
         // {
         //   name: "profile",
+        //   translationKey: "nav.profile",
         //   type: 'link',
         //   href: "/profile",
         // },
@@ -168,6 +178,7 @@ const Navbar = () => {
         ...baseNavigation,
         // {
         //   name: "login",
+        //   translationKey: "nav.login",
         //   type: 'link',
         //   href: "/login",
         // },
@@ -243,9 +254,14 @@ const Navbar = () => {
                             onClick={() => handleNavClick(nav)}
                             className={getNavItemClasses(nav)}
                         >
-                            {nav.name}
+                            {t(nav.translationKey)}
                         </button>
                     ))}
+
+                    {/* Language Switcher - Add this before the user menu */}
+                    <div className="ml-4 pl-4 border-l border-gray-300">
+                        <LanguageSwitcher />
+                    </div>
 
                     {/* User Menu Dropdown */}
                     {isAuthenticated && currentUser ? (
@@ -255,9 +271,9 @@ const Navbar = () => {
                                 className="flex items-center gap-2 text-sm hover:text-[#26687D] transition-colors"
                             >
                                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 font-medium text-xs">
-                    {currentUser.firstName.charAt(0)}{currentUser.lastName.charAt(0)}
-                  </span>
+                                    <span className="text-blue-600 font-medium text-xs">
+                                        {currentUser.firstName.charAt(0)}{currentUser.lastName.charAt(0)}
+                                    </span>
                                 </div>
                                 <span className="capitalize">{currentUser.firstName}</span>
                                 <svg
@@ -292,15 +308,15 @@ const Navbar = () => {
                                                 </div>
                                                 <div>
                                                     <p className="text-sm font-medium text-gray-900">
-                                                        {currentUser.totalPoints} Points
+                                                        {currentUser.totalPoints} {t('profile:points.current')}
                                                     </p>
-                                                    <p className="text-xs text-gray-500">Available balance</p>
+                                                    <p className="text-xs text-gray-500">{t('profile:points.current')}</p>
                                                 </div>
                                             </div>
                                             <button
                                                 onClick={scrollToPointsPurchase}
                                                 className="text-blue-600 hover:text-[#26687D] transition-colors p-1"
-                                                title="Purchase more points"
+                                                title={t('profile:points.purchaseMore')}
                                             >
                                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -322,7 +338,7 @@ const Navbar = () => {
                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                             </svg>
-                                            Profile
+                                            {t('navigation:profile')}
                                         </button>
                                         <button
                                             onClick={handleLogout}
@@ -331,7 +347,7 @@ const Navbar = () => {
                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                                             </svg>
-                                            Logout
+                                            {t('navigation:logout')}
                                         </button>
                                     </div>
                                 </div>
@@ -348,7 +364,7 @@ const Navbar = () => {
                                         : 'hover:text-[#26687D]'
                                 }`}
                             >
-                                Sign In
+                                {t('auth:signIn')}
                             </button>
                             <button
                                 onClick={() => navigate('/register')}
@@ -358,7 +374,7 @@ const Navbar = () => {
                                         : 'text-[#26687D] bg-transparent hover:bg-[#26687D] hover:text-white'
                                 }`}
                             >
-                                Sign Up
+                                {t('auth:signUp')}
                             </button>
                         </div>
                     )}
@@ -377,17 +393,23 @@ const Navbar = () => {
                         />
                     </div>
 
-                    {/* Mobile points display */}
+                    {/* Mobile right section */}
                     <div className="flex items-center gap-3">
+                        {/* Language Switcher for Mobile */}
+                        <div className="scale-90">
+                            <LanguageSwitcher />
+                        </div>
+
+                        {/* Mobile points display */}
                         {isAuthenticated && currentUser && (
                             <div className="flex items-center gap-2 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-                <span className="text-blue-600 font-medium text-sm">
-                  {currentUser.totalPoints}
-                </span>
+                                <span className="text-blue-600 font-medium text-sm">
+                                    {currentUser.totalPoints}
+                                </span>
                                 <button
                                     onClick={scrollToPointsPurchase}
                                     className="text-blue-600 hover:text-blue-800 transition-colors"
-                                    title="Purchase more points"
+                                    title={t('profile:points.purchaseMore')}
                                 >
                                     <svg
                                         className="w-4 h-4"
@@ -412,11 +434,11 @@ const Navbar = () => {
                             className="flex flex-col justify-center items-center w-8 h-8 space-y-1"
                             aria-label="Toggle menu"
                         >
-              <span
-                  className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${
-                      isOpen ? "rotate-45 translate-y-2" : ""
-                  }`}
-              />
+                            <span
+                                className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${
+                                    isOpen ? "rotate-45 translate-y-2" : ""
+                                }`}
+                            />
                             <span
                                 className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${
                                     isOpen ? "opacity-0" : ""
@@ -444,7 +466,7 @@ const Navbar = () => {
                                     onClick={() => handleNavClick(nav)}
                                     className={getNavItemClasses(nav, true)}
                                 >
-                                    {nav.name}
+                                    {t(nav.translationKey)}
                                 </button>
                             </div>
                         ))}
@@ -460,13 +482,45 @@ const Navbar = () => {
                                             : 'text-gray-700 hover:text-[#26687D]'
                                     }`}
                                 >
-                                    Profile
+                                    {t('navigation:profile')}
                                 </button>
                                 <button
                                     onClick={handleLogout}
                                     className="block text-sm text-red-600 hover:text-red-800 transition-colors py-2"
                                 >
-                                    Logout
+                                    {t('navigation:logout')}
+                                </button>
+                            </div>
+                        )}
+
+                        {/* Mobile Auth buttons for non-authenticated users */}
+                        {!isAuthenticated && (
+                            <div className="py-2 border-t border-gray-200 mt-2 space-y-2">
+                                <button
+                                    onClick={() => {
+                                        navigate('/login');
+                                        setIsOpen(false);
+                                    }}
+                                    className={`block w-full text-left text-sm py-2 transition-colors ${
+                                        location.pathname === '/login'
+                                            ? 'text-[#26687D] font-medium'
+                                            : 'text-gray-700 hover:text-[#26687D]'
+                                    }`}
+                                >
+                                    {t('auth:signIn')}
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        navigate('/register');
+                                        setIsOpen(false);
+                                    }}
+                                    className={`block w-full text-left text-sm py-2 transition-colors ${
+                                        location.pathname === '/register'
+                                            ? 'text-[#26687D] font-medium'
+                                            : 'text-gray-700 hover:text-[#26687D]'
+                                    }`}
+                                >
+                                    {t('auth:login.buttons.signIn')}
                                 </button>
                             </div>
                         )}

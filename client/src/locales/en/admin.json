@@ -1,0 +1,54 @@
+{
+  "title": "Admin Dashboard",
+  "menu": {
+    "dashboard": "Dashboard",
+    "appointments": "Appointments",
+    "users": "Users",
+    "packs": "Service Packs",
+    "analytics": "Analytics",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "stats": {
+      "totalUsers": "Total Users",
+      "totalAppointments": "Total Appointments",
+      "revenue": "Revenue",
+      "activeUsers": "Active Users"
+    },
+    "recentActivity": "Recent Activity",
+    "quickActions": "Quick Actions"
+  },
+  "appointments": {
+    "title": "Appointments Management",
+    "table": {
+      "id": "ID",
+      "customer": "Customer",
+      "service": "Service",
+      "date": "Date",
+      "time": "Time",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    }
+  },
+  "users": {
+    "title": "Users Management",
+    "addUser": "Add User",
+    "editUser": "Edit User",
+    "table": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "points": "Points",
+      "registered": "Registered",
+      "lastLogin": "Last Login",
+      "status": "Status",
+      "actions": "Actions"
+    }
+  }
+}

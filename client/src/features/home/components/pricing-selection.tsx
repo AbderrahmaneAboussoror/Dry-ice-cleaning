@@ -1,6 +1,7 @@
 // src/features/home/components/pricing-selection.tsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Check from "@/components/icons/check";
 import PaymentModal from './payment-modal';
 import { Pack, packService } from '../../../services/packService';
@@ -17,6 +18,8 @@ interface PricingTierProps {
 }
 
 const PricingTier: React.FC<PricingTierProps> = ({ pack, onPurchase, isAuthenticated }) => {
+    const { t } = useTranslation('home');
+
     // Safely extract and calculate values
     const priceDisplay = typeof pack.priceInDKK === 'number' ? pack.priceInDKK : 0;
     const pointsIncluded = typeof pack.pointsIncluded === 'number' ? pack.pointsIncluded : 0;
@@ -33,7 +36,9 @@ const PricingTier: React.FC<PricingTierProps> = ({ pack, onPurchase, isAuthentic
         if (!Array.isArray(services) || services.length === 0) return [];
 
         return services.map(service => {
-            const serviceTypeName = service.serviceType === 'basic' ? 'Basic Cleaning' : 'Deluxe Cleaning';
+            const serviceTypeName = service.serviceType === 'basic' ?
+                t('pricing.services.basic') :
+                t('pricing.services.deluxe');
             const quantity = service.quantity || 1;
             return quantity > 1 ? `${quantity}x ${serviceTypeName}` : serviceTypeName;
         });
@@ -44,23 +49,23 @@ const PricingTier: React.FC<PricingTierProps> = ({ pack, onPurchase, isAuthentic
     return (
         <div className="rounded-2xl border p-6 hover:scale-[1.05] cursor-pointer ease-in-out transition-all bg-gray-100 border-gray-400">
             <h3 className="text-lg font-semibold text-gray-900">
-                {pack.name || 'Pack'}
+                {pack.name || t('pricing.defaultPackName')}
             </h3>
 
             <div className="mt-4 text-4xl font-bold text-gray-900">
-                {priceDisplay} DKK{" "}
+                {priceDisplay} {t('pricing.currency')}{" "}
                 <span className="text-2xl font-semibold text-gray-700">
-                    for {totalPoints} points
+                    {t('pricing.forPoints', { points: totalPoints })}
                 </span>
             </div>
 
             <p className="mt-2 text-xs text-gray-600">
-                {pack.description || 'No description available'}
+                {pack.description || t('pricing.noDescription')}
             </p>
 
             {actualSavings > 0 && (
                 <div className="mt-2 bg-green-100 text-green-800 px-2 py-1 rounded text-xs">
-                    Save {actualSavings} DKK
+                    {t('pricing.save', { amount: actualSavings })} {t('pricing.currency')}
                 </div>
             )}
 
@@ -68,7 +73,7 @@ const PricingTier: React.FC<PricingTierProps> = ({ pack, onPurchase, isAuthentic
                 onClick={onPurchase}
                 className="mt-6 capitalize w-full rounded-full py-2 text-sm font-medium transition text-gray-800 hover:bg-gray-100 border border-gray-300"
             >
-                {isAuthenticated ? 'Purchase Pack' : 'Login to Purchase'}
+                {isAuthenticated ? t('pricing.purchasePack') : t('pricing.loginToPurchase')}
             </button>
 
             <div className="mt-6 border-t border-gray-400 pt-6">
@@ -77,7 +82,7 @@ const PricingTier: React.FC<PricingTierProps> = ({ pack, onPurchase, isAuthentic
                     <li className="flex items-center justify-start gap-2">
                         <Check color="black" />
                         <span className="text-xs text-gray-700">
-                            {pointsIncluded} points included
+                            {t('pricing.features.pointsIncluded', { points: pointsIncluded })}
                         </span>
                     </li>
 
@@ -86,7 +91,7 @@ const PricingTier: React.FC<PricingTierProps> = ({ pack, onPurchase, isAuthentic
                         <li className="flex items-center justify-start gap-2">
                             <Check color="black" />
                             <span className="text-xs text-gray-700">
-                                {bonusPoints} bonus points
+                                {t('pricing.features.bonusPoints', { points: bonusPoints })}
                             </span>
                         </li>
                     )}
@@ -96,7 +101,7 @@ const PricingTier: React.FC<PricingTierProps> = ({ pack, onPurchase, isAuthentic
                         <li key={index} className="flex items-center justify-start gap-2">
                             <Check color="black" />
                             <span className="text-xs text-gray-700">
-                                Free {service}
+                                {t('pricing.features.freeService', { service })}
                             </span>
                         </li>
                     ))}
@@ -105,19 +110,19 @@ const PricingTier: React.FC<PricingTierProps> = ({ pack, onPurchase, isAuthentic
                     <li className="flex items-center justify-start gap-2">
                         <Check color="black" />
                         <span className="text-xs text-gray-700">
-                            No Expiry
+                            {t('pricing.features.noExpiry')}
                         </span>
                     </li>
                     <li className="flex items-center justify-start gap-2">
                         <Check color="black" />
                         <span className="text-xs text-gray-700">
-                            Instant Access
+                            {t('pricing.features.instantAccess')}
                         </span>
                     </li>
                     <li className="flex items-center justify-start gap-2">
                         <Check color="black" />
                         <span className="text-xs text-gray-700">
-                            Priority Support
+                            {t('pricing.features.prioritySupport')}
                         </span>
                     </li>
                 </ul>
@@ -127,6 +132,7 @@ const PricingTier: React.FC<PricingTierProps> = ({ pack, onPurchase, isAuthentic
 };
 
 const PricingSelection: React.FC = () => {
+    const { t } = useTranslation('home');
     const authModal = useModal();
     const successModal = useModal();
     const navigate = useNavigate();
@@ -152,18 +158,18 @@ const PricingSelection: React.FC = () => {
                 if (Array.isArray(packsData)) {
                     setPacks(packsData);
                 } else {
-                    throw new Error('Invalid packs data received');
+                    throw new Error(t('pricing.errors.invalidData'));
                 }
             } catch (err) {
                 console.error('Failed to fetch packs:', err);
-                setError(err instanceof Error ? err.message : 'Failed to load packs');
+                setError(err instanceof Error ? err.message : t('pricing.errors.failedToLoad'));
             } finally {
                 setIsLoading(false);
             }
         };
 
         fetchPacks();
-    }, []);
+    }, [t]);
 
     // Authentication check with popup
     const checkAuthentication = async (): Promise<boolean> => {
@@ -215,7 +221,7 @@ const PricingSelection: React.FC = () => {
         return (
             <div className="text-center py-8">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-                <p className="mt-2 text-gray-600">Loading packs...</p>
+                <p className="mt-2 text-gray-600">{t('pricing.loading')}</p>
             </div>
         );
     }
@@ -223,12 +229,12 @@ const PricingSelection: React.FC = () => {
     if (error) {
         return (
             <div className="text-center py-8">
-                <p className="text-red-600">Error: {error}</p>
+                <p className="text-red-600">{t('pricing.error')}: {error}</p>
                 <button
                     onClick={() => window.location.reload()}
                     className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                 >
-                    Retry
+                    {t('pricing.retry')}
                 </button>
             </div>
         );
@@ -237,7 +243,7 @@ const PricingSelection: React.FC = () => {
     if (!Array.isArray(packs) || packs.length === 0) {
         return (
             <div className="text-center py-8">
-                <p className="text-gray-600">No packs available at the moment.</p>
+                <p className="text-gray-600">{t('pricing.noPacksAvailable')}</p>
             </div>
         );
     }
@@ -267,10 +273,10 @@ const PricingSelection: React.FC = () => {
                 isOpen={authModal.isOpen}
                 onClose={authModal.closeModal}
                 onConfirm={handleAuthConfirm}
-                title="Sign In Required"
-                message="You need to sign in to purchase points. Create an account or sign in to buy point packages and start booking services."
-                confirmText="Sign In"
-                cancelText="Cancel"
+                title={t('pricing.auth.title')}
+                message={t('pricing.auth.message')}
+                confirmText={t('pricing.auth.signIn')}
+                cancelText={t('common:cancel')}
                 type="info"
                 icon={
                     <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -283,8 +289,8 @@ const PricingSelection: React.FC = () => {
             <SuccessModal
                 isOpen={successModal.isOpen}
                 onClose={successModal.closeModal}
-                title="Purchase Successful!"
-                message={`🎉 You received ${successPoints} points! Your points have been added to your account and you can now book services.`}
+                title={t('pricing.success.title')}
+                message={t('pricing.success.message', { points: successPoints })}
             />
         </>
     );

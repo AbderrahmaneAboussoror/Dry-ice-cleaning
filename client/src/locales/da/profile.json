@@ -1,0 +1,147 @@
+{
+  "layout": {
+    "title": "Min Profil",
+    "subtitle": "Administrer dine kontooplysninger og se din servicehistorik"
+  },
+  "personal": {
+    "title": "Personlige Oplysninger",
+    "buttons": {
+      "edit": "Rediger",
+      "cancel": "Annuller",
+      "retry": "Prøv Igen",
+      "saving": "Gemmer...",
+      "saveChanges": "Gem Ændringer"
+    },
+    "fields": {
+      "firstName": "fornavn",
+      "lastName": "efternavn",
+      "email": "e-mailadresse",
+      "phone": "telefon",
+      "address": "adresse"
+    },
+    "placeholders": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "+45 12 34 56 78",
+      "address": "123 Hovedgade, By, Postnummer"
+    },
+    "errors": {
+      "sessionExpired": "Session udløbet. Log venligst ind igen.",
+      "profileNotFound": "Brugerprofil ikke fundet.",
+      "connectionError": "Kan ikke oprette forbindelse til server. Tjek venligst din internetforbindelse.",
+      "generalError": "Fejl: {{message}}",
+      "loadFailed": "Kunne ikke indlæse profildata. Opdater venligst siden."
+    },
+    "messages": {
+      "updateSuccess": "Profil opdateret med succes!",
+      "updateFailed": "Kunne ikke opdatere profil. Prøv venligst igen."
+    }
+  },
+
+  "appointments": {
+    "title": "Aktuelle Aftaler",
+    "dateLocale": "da-DK",
+    "buttons": {
+      "refresh": "Opdater",
+      "retry": "Prøv Igen"
+    },
+    "serviceTypes": {
+      "basic": "Basis Rengøringsservice",
+      "deluxe": "Deluxe Rengøringsservice"
+    },
+    "statuses": {
+      "confirmed": "Bekræftet",
+      "pending": "Afventer",
+      "in_progress": "I Gang",
+      "cancelled": "Aflyst"
+    },
+    "table": {
+      "date": "Dato",
+      "time": "Tid",
+      "service": "Service",
+      "location": "Lokation",
+      "points": "Point",
+      "status": "Status",
+      "price": "Pris"
+    },
+    "mobile": {
+      "date": "Dato",
+      "time": "Tid",
+      "price": "Pris",
+      "notes": "Noter"
+    },
+    "empty": {
+      "title": "Ingen kommende aftaler",
+      "subtitle": "Dine fremtidige aftaler vil vises her"
+    },
+    "errors": {
+      "loadFailed": "Kunne ikke indlæse aftaler"
+    }
+  },
+
+  "jobHistory": {
+    "title": "Jobhistorik",
+    "dateLocale": "da-DK",
+    "buttons": {
+      "refresh": "Opdater",
+      "retry": "Prøv Igen"
+    },
+    "serviceTypes": {
+      "basic": "Basis Rengøringsservice",
+      "deluxe": "Deluxe Rengøringsservice"
+    },
+    "empty": {
+      "title": "Ingen afsluttede job endnu",
+      "subtitle": "Dine afsluttede aftaler vil vises her"
+    },
+    "stats": {
+      "totalJobs": "Samlede Job",
+      "pointsConsumed": "Point Forbrugt",
+      "premiumJobs": "Premium Job"
+    },
+    "errors": {
+      "loadFailed": "Kunne ikke indlæse jobhistorik"
+    }
+  },
+
+  "purchasedPacks": {
+    "title": "Købte Pakker",
+    "currentBalance": "Nuværende Saldo",
+    "points": "point",
+    "buttons": {
+      "refresh": "Opdater",
+      "retry": "Prøv Igen",
+      "buyMore": "Køb Flere Point"
+    },
+    "table": {
+      "purchaseDate": "Købsdato",
+      "package": "Pakke",
+      "points": "Point",
+      "pointsAndBenefits": "Point og Fordele",
+      "amountPaid": "Betalt Beløb",
+      "status": "Status"
+    },
+    "mobile": {
+      "points": "Point",
+      "amountPaid": "Betalt Beløb",
+      "includedServices": "Inkluderede Tjenester"
+    },
+    "empty": {
+      "title": "Ingen køb endnu",
+      "subtitle": "Dine købte pakker vil vises her"
+    },
+    "stats": {
+      "totalPurchases": "Samlede Køb",
+      "pointsEarned": "Point Optjent",
+      "totalSpent": "Samlet Brugt",
+      "successful": "Succesfulde"
+    },
+    "status": {
+      "completed": "Gennemført"
+    },
+    "errors": {
+      "loadFailed": "Kunne ikke indlæse købshistorik"
+    }
+  }
+}
