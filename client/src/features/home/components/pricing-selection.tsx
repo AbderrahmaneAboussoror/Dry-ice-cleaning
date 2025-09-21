@@ -59,6 +59,14 @@ const PricingTier: React.FC<PricingTierProps> = ({ pack, onPurchase, isAuthentic
                 </span>
             </div>
 
+            <div className="mt-1 text-xs text-gray-500">
+                {t('pricing.vatIncluded', {
+                    amount: pack.priceExcludingVAT,
+                    vatRate: Math.round(pack.vatRate * 100),
+                    vatAmount: pack.vatAmount
+                })}
+            </div>
+
             <p className="mt-2 text-xs text-gray-600">
                 {pack.description || t('pricing.noDescription')}
             </p>

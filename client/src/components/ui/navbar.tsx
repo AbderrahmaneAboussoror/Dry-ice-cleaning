@@ -520,7 +520,7 @@ const Navbar = () => {
                                             : 'text-gray-700 hover:text-[#26687D]'
                                     }`}
                                 >
-                                    {t('auth:login.buttons.signIn')}
+                                    {t('auth:signUp')}
                                 </button>
                             </div>
                         )}

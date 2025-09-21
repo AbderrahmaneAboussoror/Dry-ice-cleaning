@@ -5,7 +5,10 @@ export interface Pack {
     id: string;
     name: string;
     description: string;
-    priceInDKK: number;
+    priceInDKK: number; // VAT-inclusive price
+    priceExcludingVAT: number;
+    vatAmount: number;
+    vatRate: number;
     pointsIncluded: number;
     bonusPoints: number;
     totalPoints: number;

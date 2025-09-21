@@ -3,7 +3,9 @@ import { Schema, model, Document, Types } from 'mongoose';
 export interface IPack extends Document {
     name: string;
     description: string;
+    priceExcludingVAT: number;
     priceInDKK: number;
+    vatRate: number;
     pointsIncluded: number;
     bonusPoints: number;
     freeServices: {
@@ -15,6 +17,7 @@ export interface IPack extends Document {
     updatedAt: Date;
     totalPoints: number; // Virtual property
     totalValue: number; // Virtual property
+    vatAmount: number; // Add this virtual property
 }
 
 const packSchema = new Schema<IPack>(
@@ -30,10 +33,19 @@ const packSchema = new Schema<IPack>(
             required: true,
             trim: true
         },
+        priceExcludingVAT: {
+            type: Number,
+            required: true,
+            min: 0
+        },
         priceInDKK: {
             type: Number,
             required: true,
             min: 0
+        }, // This becomes VAT-inclusive price
+        vatRate: {
+            type: Number,
+            default: 0.25 // 25% VAT
         },
         pointsIncluded: {
             type: Number,
@@ -65,6 +77,9 @@ const packSchema = new Schema<IPack>(
     { timestamps: true }
 );
 
+packSchema.set('toJSON', { virtuals: true });
+packSchema.set('toObject', { virtuals: true });
+
 // Virtual for total points
 packSchema.virtual('totalPoints').get(function() {
     return this.pointsIncluded + this.bonusPoints;
@@ -78,6 +93,10 @@ packSchema.virtual('totalValue').get(function() {
         serviceValue += servicePrice * service.quantity;
     });
     return this.totalPoints + serviceValue;
+});
+
+packSchema.virtual('vatAmount').get(function() {
+    return this.priceInDKK - this.priceExcludingVAT;
 });
 
 export default model<IPack>('Pack', packSchema);

@@ -223,6 +223,8 @@
   "pricing": {
     "sectionTitle": "fleksible priser for alle behov",
     "sectionSubtitle": "køb point",
+    "vatIncluded": "({amount} DKK + {vatRate}% moms)",
+    "vatInclusivePrice": "{{amount}} DKK (VAT included)",
     "currency": "DKK",
     "defaultPackName": "Pakke",
     "noDescription": "Ingen beskrivelse tilgængelig",

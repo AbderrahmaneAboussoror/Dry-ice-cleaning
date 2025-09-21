@@ -121,6 +121,12 @@
       "characters": "characters"
     },
 
+    "policy": {
+      "title": "Cancellation Policy",
+      "noShowFee": "If you do not show up for your scheduled appointment, 50% of the service amount will be deducted to cover transportation costs and wasted materials, as dry ice melts if not used.",
+      "successReminder": "Important: No-show appointments incur a 50% deduction fee for transport and material costs."
+    },
+
     "buttons": {
       "bookAppointment": "Book Appointment",
       "booking": "Booking..."
@@ -223,6 +229,8 @@
   "pricing": {
     "sectionTitle": "flexible pricing for all needs",
     "sectionSubtitle": "purchase points",
+    "vatIncluded": "({{amount}} DKK + {{vatRate}}% VAT)",
+    "vatInclusivePrice": "{{amount}} DKK (VAT included)",
     "currency": "DKK",
     "defaultPackName": "Pack",
     "noDescription": "No description available",

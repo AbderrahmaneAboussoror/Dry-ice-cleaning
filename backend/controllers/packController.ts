@@ -17,7 +17,10 @@ export const getAvailablePacks = async (req: Request, res: Response): Promise<vo
             id: pack._id,
             name: pack.name,
             description: pack.description,
-            priceInDKK: pack.priceInDKK,
+            priceInDKK: pack.priceInDKK, // VAT-inclusive price
+            priceExcludingVAT: pack.priceExcludingVAT,
+            vatAmount: pack.vatAmount,
+            vatRate: pack.vatRate,
             pointsIncluded: pack.pointsIncluded,
             bonusPoints: pack.bonusPoints,
             totalPoints: pack.totalPoints,
