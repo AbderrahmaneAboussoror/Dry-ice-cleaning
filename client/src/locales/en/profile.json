@@ -77,6 +77,13 @@
     },
     "errors": {
       "loadFailed": "Failed to load appointments"
+    },
+    "policy": {
+      "tooltip": "View cancellation policy",
+      "mobileLabel": "Cancellation Policy",
+      "viewPolicy": "View Policy",
+      "modalTitle": "Cancellation Policy",
+      "modalMessage": "If you do not show up for your scheduled appointment, 50% of the service amount will be deducted to cover transportation costs and wasted materials, as dry ice melts if not used."
     }
   },
 
@@ -109,6 +116,7 @@
     "title": "Purchased Packs",
     "currentBalance": "Current Balance",
     "points": "points",
+    "purchaseMore": "Purchase More",
     "buttons": {
       "refresh": "Refresh",
       "retry": "Retry",

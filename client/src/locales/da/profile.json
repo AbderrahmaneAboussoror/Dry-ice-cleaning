@@ -77,6 +77,13 @@
     },
     "errors": {
       "loadFailed": "Kunne ikke indlæse aftaler"
+    },
+    "policy": {
+      "tooltip": "Se aflysningspolitik",
+      "mobileLabel": "Aflysningspolitik",
+      "viewPolicy": "Se Politik",
+      "modalTitle": "Aflysningspolitik",
+      "modalMessage": "Hvis du ikke møder op til din planlagte aftale, vil 50% af servicebeløbet blive fratrukket for at dække transportomkostninger og spildte materialer, da tøris smelter hvis det ikke bruges."
     }
   },
 
@@ -109,6 +116,7 @@
     "title": "Købte Pakker",
     "currentBalance": "Nuværende Saldo",
     "points": "point",
+    "purchaseMore": "",
     "buttons": {
       "refresh": "Opdater",
       "retry": "Prøv Igen",

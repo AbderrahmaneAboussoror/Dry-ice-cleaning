@@ -121,6 +121,12 @@
       "characters": "tegn"
     },
 
+    "policy": {
+      "title": "Aflysningspolitik",
+      "noShowFee": "Hvis du ikke møder op til din planlagte aftale, vil 50% af servicebeløbet blive fratrukket for at dække transportomkostninger og spildte materialer, da tøris smelter hvis det ikke bruges.",
+      "successReminder": "Vigtigt: Udeblivelse fra aftaler medfører et fradrag på 50% for transport- og materialomkostninger."
+    },
+
     "buttons": {
       "bookAppointment": "Book Aftale",
       "booking": "Booker..."

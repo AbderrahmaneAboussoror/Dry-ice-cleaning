@@ -291,10 +291,10 @@ const Navbar = () => {
                                 <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                                     {/* User Info */}
                                     <div className="px-4 py-3 border-b border-gray-100">
-                                        <p className="text-sm font-medium text-gray-900">
+                                        <p className="text-sm font-medium text-gray-900 truncate">
                                             {currentUser.firstName} {currentUser.lastName}
                                         </p>
-                                        <p className="text-sm text-gray-500">{currentUser.email}</p>
+                                        <p className="text-sm text-gray-500 truncate" title={currentUser.email}>{currentUser.email}</p>
                                     </div>
 
                                     {/* Points Section */}
@@ -308,15 +308,15 @@ const Navbar = () => {
                                                 </div>
                                                 <div>
                                                     <p className="text-sm font-medium text-gray-900">
-                                                        {currentUser.totalPoints} {t('profile:points.current')}
+                                                        {currentUser.totalPoints} {t('profile:purchasedPacks.points')}
                                                     </p>
-                                                    <p className="text-xs text-gray-500">{t('profile:points.current')}</p>
+                                                    <p className="text-xs text-gray-500">{t('profile:purchasedPacks.currentBalance')}</p>
                                                 </div>
                                             </div>
                                             <button
                                                 onClick={scrollToPointsPurchase}
                                                 className="text-blue-600 hover:text-[#26687D] transition-colors p-1"
-                                                title={t('profile:points.purchaseMore')}
+                                                title={t('profile:purchasedPacks.purchaseMore')}
                                             >
                                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -409,7 +409,7 @@ const Navbar = () => {
                                 <button
                                     onClick={scrollToPointsPurchase}
                                     className="text-blue-600 hover:text-blue-800 transition-colors"
-                                    title={t('profile:points.purchaseMore')}
+                                    title={t('profile:purchasedPacks.purchaseMore')}
                                 >
                                     <svg
                                         className="w-4 h-4"
